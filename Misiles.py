@@ -1,10 +1,10 @@
+#Determina la cantidad de impactos en base a una tirada, cantidad de misiles y la dificultad base.
 def misiles(tirada,misiles,dificultad=5):
     bono = round(misiles/4)
     bono -= 1
     if(bono<1):
         bono = 0
     tirada+=bono
-    resultado=tirada-dificultad
     dificultadTotal = dificultad + 15
     if(tirada>dificultadTotal):
         print ('Camarada, Impactaron todos los misiles, por el Padre Espacio')
@@ -23,7 +23,8 @@ def misiles(tirada,misiles,dificultad=5):
                 print ('Camarada, un misil impacto, mejore esa punteria camarada!')
         else:
             print ('Camarada, {0} misiles impactaron, Siga avanzando!'. format(round(impactos)))
-
+            
+#Define la cantidad de objetivos fijados para los misiles
 def weaponSystems(tirada,dificultad,objetivos=1):
     totalObjetivos=((dificultad-tirada)/5)+1
     if(round(totalObjetivos) == 1):
